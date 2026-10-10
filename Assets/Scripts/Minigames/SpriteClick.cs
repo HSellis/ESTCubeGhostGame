@@ -23,6 +23,7 @@ public class SpriteClick : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("Click");
         if (!wireStartPoint.canDraw) return;
         if (wireStartPoint == null || wirePrefab == null || targetCamera == null)
         {
