@@ -52,9 +52,9 @@ public class GameController : MonoBehaviour
             EndGame();
             // Handle game over logic here
         }
-        else
+        else if (GameDuration != -1)
         {
-            GameDuration -= Time.deltaTime;
+            GameDuration = Mathf.Clamp(GameDuration - Time.deltaTime, 0, GameDuration);
         }
         float changeDirection = 0f;
         Keyboard keyboard = Keyboard.current;

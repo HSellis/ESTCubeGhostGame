@@ -22,7 +22,7 @@ public class Settings : MonoBehaviour
 
     private void SetVolume(float value)
     {
-        volume = value*2;
+        volume = Mathf.Exp(value);
 
         // If we're muted, don't change the actual volume yet.
         if (!isMuted)
