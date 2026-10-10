@@ -2,14 +2,10 @@ using UnityEngine;
 
 public class CubeFace : MonoBehaviour
 {
-    public Transform cameraFocusTransform;
-    private MeshRenderer meshRenderer;
-    private Collider collider;
 
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        collider = GetComponent<Collider>();
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,10 +20,6 @@ public class CubeFace : MonoBehaviour
         
     }
 
-    public void RepairComplete()
-    {
-        meshRenderer.enabled = true;
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -41,9 +33,7 @@ public class CubeFace : MonoBehaviour
 
     private void OnHitMeteorite()
     {
-        meshRenderer.enabled = false;
         ESTCube.PlayImpactSound();
+        gameObject.SetActive(false);
     }
-
-    
 }

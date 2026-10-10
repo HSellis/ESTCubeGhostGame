@@ -55,10 +55,10 @@ public class MouseClicker : MonoBehaviour
         Ray ray = camera.ScreenPointToRay(screenPosition);
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, hitLayers))
         {
-            CubeFace cubeFace = hit.collider.GetComponent<CubeFace>();
-            if (cubeFace != null)
+            MiniGame miniGame = hit.collider.GetComponent<MiniGame>();
+            if (miniGame != null)
             {
-                gameController.ZoomToCubeFace(cubeFace);
+                gameController.ZoomToMiniGame(miniGame);
             }
         }
     }
