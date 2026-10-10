@@ -290,6 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   camera: {fileID: 593693910}
   cameraMovementSpeed: 1.5
+  estCube: {fileID: 1301985140}
 --- !u!1001 &687797450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,6 +356,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e3b3571b276094f91be53c8515bc68, type: 3}
+--- !u!114 &1301985140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5994156417735233960, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
+  m_PrefabInstance: {fileID: 2005445848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d6cda6cc21aa744a0ca191ba017840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ESTCube
 --- !u!1 &1662100719
 GameObject:
   m_ObjectHideFlags: 0
