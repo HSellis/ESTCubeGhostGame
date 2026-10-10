@@ -17,13 +17,13 @@ public class ESTCube : MonoBehaviour
     public GameObject cubetip;
     private Rigidbody rb;
     private LineRenderer lineRenderer;
-    public static List<AudioSource> audioSources;
+    private AudioSource cableAudioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.angularVelocity = startAngularVelocity;
-        audioSources = new List<AudioSource>(GetComponents<AudioSource>());
+        cableAudioSource = GetComponent<AudioSource>();
         lineRenderer = cubetip.GetComponent<LineRenderer>();
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, cubetip.transform.position);
@@ -42,7 +42,6 @@ public class ESTCube : MonoBehaviour
         float cableLength = Mathf.Clamp(fromCenterToTip.magnitude, minTipDistance, maxTipDistance);
         if (cableLength >= minTipDistance && cableLength <= maxTipDistance)
         {
-            AudioSource cableAudioSource = audioSources[2];
             if (cableAudioSource != null && !cableAudioSource.isPlaying)
             {
                 cableAudioSource.Play();
@@ -64,26 +63,10 @@ public class ESTCube : MonoBehaviour
             {
                 rb.angularVelocity = new Vector3(rb.angularVelocity.x * changeValue, rb.angularVelocity.y * changeValue, rb.angularVelocity.z);
             }
-            
         }
         else
         {
             rb.angularVelocity = new Vector3(rb.angularVelocity.x / changeValue, rb.angularVelocity.y / changeValue, rb.angularVelocity.z);
-        }
-    }
-    public static void PlayImpactSound()
-    {   
-        foreach (AudioSource audioSource in audioSources)
-        {
-            if (audioSource.isPlaying)
-            {
-                return;
-            }
-        }
-        AudioSource randomAudioSource = audioSources[Random.Range(0, audioSources.Count-1)];
-        if (randomAudioSource != null && !randomAudioSource.isPlaying)
-        {
-            randomAudioSource.Play();
         }
     }
 }
