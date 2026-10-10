@@ -3,12 +3,14 @@ using UnityEngine.InputSystem;
 
 public class WireDrag : MonoBehaviour
 {
-    private Transform startPoint;
+    public WireDragSpot startPoint;
     private Camera targetCamera;
     private WireColor wireColor;
     public SpriteRenderer wireSprite;
 
-    public void Initialize(Transform startPoint, Camera camera)
+    public bool isComplete = false;
+
+    public void Initialize(WireDragSpot startPoint, Camera camera)
     {
         this.startPoint = startPoint;
         this.targetCamera = camera;
@@ -40,12 +42,18 @@ public class WireDrag : MonoBehaviour
 
     private void Update()
     {
-        if (startPoint == null || targetCamera == null)
-            return;
+        if (!isComplete) { 
+            if (startPoint == null || targetCamera == null)
+                return;
 
-        Vector3 start = startPoint.position;
-        Vector3 end = GetMouseWorldPosition();
+            Vector3 start = startPoint.transform.position;
+            Vector3 end = GetMouseWorldPosition();
 
+            setWireTransform(start, end);
+        }
+    }
+    private void setWireTransform(Vector3 start, Vector3 end)
+    {
         Vector3 direction = end - start;
 
         transform.position = (start + end) / 2f;
@@ -57,7 +65,7 @@ public class WireDrag : MonoBehaviour
         );
 
         Vector3 localDirection =
-            startPoint.InverseTransformDirection(direction);
+            startPoint.transform.InverseTransformDirection(direction);
 
         float angle = Mathf.Atan2(
             localDirection.y,
@@ -65,27 +73,41 @@ public class WireDrag : MonoBehaviour
         ) * Mathf.Rad2Deg;
 
         transform.rotation =
-            startPoint.rotation *
+            startPoint.transform.rotation *
             Quaternion.Euler(0f, 0f, angle);
+    }
+
+    public void SetWireCompleted(WireDragSpot EndPoint)
+    {
+        Vector3 start = startPoint.transform.position;
+        Vector3 end = EndPoint.transform.position;
+        
+        isComplete = true;
+        startPoint.canDraw = false;
+        EndPoint.canDraw = false;
+        setWireTransform(start, end);
+        WireMiniGame minigame = this.gameObject.GetComponentInParent<WireMiniGame>();
+        minigame.SetCurrentWire(null);
+        minigame.CheckComplete();
     }
 
     private Vector3 GetMouseWorldPosition()
     {
         if (Mouse.current == null)
-            return startPoint.position;
+            return startPoint.transform.position;
 
         Ray ray = targetCamera.ScreenPointToRay(
             Mouse.current.position.ReadValue()
         );
 
         Plane plane = new Plane(
-            startPoint.forward,
-            startPoint.position
-        );
+            startPoint.transform.forward,
+            startPoint.transform.position
+        );  
 
         if (plane.Raycast(ray, out float distance))
             return ray.GetPoint(distance);
 
-        return startPoint.position;
+        return startPoint.transform.position;
     }
 }

@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class SpriteClick : MonoBehaviour
 {
-    [SerializeField] public Transform wireStartPoint;
+    [SerializeField] public WireDragSpot wireStartPoint;
     [SerializeField] public GameObject wirePrefab;
     [SerializeField] private Camera targetCamera;
 
     private GameObject activeWire;
 
+    private WireMiniGame minigame;
+
     private void Awake()
     {
+        minigame = this.gameObject.GetComponentInParent<WireMiniGame>();
         if (targetCamera == null)
             targetCamera = FindAnyObjectByType<Camera>();
             Debug.Log(targetCamera.name);
@@ -20,15 +23,19 @@ public class SpriteClick : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!wireStartPoint.canDraw) return;
         if (wireStartPoint == null || wirePrefab == null || targetCamera == null)
         {
             Debug.LogError("Missing wire start point, prefab, or camera!", this);
             return;
         }
 
-        activeWire = Instantiate(wirePrefab);
+        activeWire = Instantiate(wirePrefab, this.transform.parent);
 
         WireDrag wire = activeWire.GetComponent<WireDrag>();
+
+        wire.SetColor(wireStartPoint.wireColor);
+        minigame.SetCurrentWire(wire);
 
         if (wire != null)
         {
@@ -42,10 +49,21 @@ public class SpriteClick : MonoBehaviour
         }
     }
 
+    private void OnMouseEnter()
+    {
+        WireDrag wire = minigame.GetCurrentWire();
+        if (wire != null)
+        {
+            if (wire.startPoint != this.wireStartPoint)
+            {
+                wire.SetWireCompleted(wireStartPoint);
+            }
+        }
+    }
 
     private void OnMouseUp()
     {
-        if (activeWire != null)
+        if (activeWire != null && !activeWire.GetComponent<WireDrag>().isComplete)
         {
             Destroy(activeWire);
             activeWire = null;
