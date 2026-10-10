@@ -3,13 +3,19 @@ using UnityEngine;
 
 public class WireMiniGame : MonoBehaviour
 {
-    public GameController gameController;
+    public CubeFace cubeFace;
+    private GameController gameController;
     private WireDrag CurrentWire;
 
     private WireDragSpot[] WireSpots;
     private void Awake()
     {
         WireSpots = this.gameObject.GetComponentsInChildren<WireDragSpot>();
+    }
+
+    private void Start()
+    {
+        gameController = GameObject.Find("Main Camera").GetComponent<GameController>();
     }
 
     public void SetCurrentWire(WireDrag wire)
@@ -28,5 +34,6 @@ public class WireMiniGame : MonoBehaviour
             if (wire.canDraw) return;
         }
         gameController.ZoomOutFromCube();
+        cubeFace.RepairComplete();
     }
 }

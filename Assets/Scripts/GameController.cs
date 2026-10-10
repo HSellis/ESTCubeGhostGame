@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
     public void ZoomToCubeFace(CubeFace cubeFace)
     {
         viewState = 1;
-        //cubeFace.Click();
+        
         DOTweenCustomUtils.DOMoveInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, Vector3.zero, cameraMovementSpeed);
         DOTweenCustomUtils.DORotateInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, cameraMovementSpeed).OnComplete(() =>
         {
