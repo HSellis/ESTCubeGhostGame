@@ -891,6 +891,7 @@ Transform:
   m_Children:
   - {fileID: 8072398648462086300}
   - {fileID: 614002591001550199}
+  - {fileID: 7060067667314576513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &636163907344514882
@@ -1290,3 +1291,65 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &5914149968446304820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2768008536529133496}
+    m_Modifications:
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710653
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710707
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928592552099554787, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_Name
+      value: WiresMinigame
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+--- !u!4 &7060067667314576513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3740571735932583605, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+  m_PrefabInstance: {fileID: 5914149968446304820}
+  m_PrefabAsset: {fileID: 0}
