@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Meteorite_Spawner : MonoBehaviour
+public class MeteoriteSpawner : MonoBehaviour
 {
     public GameObject meteoritePrefab1;
 
