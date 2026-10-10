@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -14,11 +15,13 @@ public class ESTCube : MonoBehaviour
 
     private Rigidbody rb;
 
+    public static List<AudioSource> audioSources;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.angularVelocity = startAngularVelocity;
+        audioSources = new List<AudioSource>(GetComponents<AudioSource>());
     }
 
     // Update is called once per frame
@@ -28,11 +31,16 @@ public class ESTCube : MonoBehaviour
     }
 
     public void MoveCable(float changeDirection)
-    {
+    {   
         Vector3 scale = cableTransform.localScale;
         float cableLength = scale.z + changeDirection * cableChangeSpeed * Time.deltaTime;
         if (cableLength >= minCableLength && cableLength <= maxCableLength)
         {
+            AudioSource cableAudioSource = audioSources[2];
+            if (cableAudioSource != null && !cableAudioSource.isPlaying)
+            {
+                cableAudioSource.Play();
+            }
             scale.z = cableLength;
             cableTransform.localScale = scale;
 
@@ -51,6 +59,21 @@ public class ESTCube : MonoBehaviour
         else
         {
             rb.angularVelocity = new Vector3(rb.angularVelocity.x / changeValue, rb.angularVelocity.y / changeValue, rb.angularVelocity.z);
+        }
+    }
+    public static void PlayImpactSound()
+    {   
+        foreach (AudioSource audioSource in audioSources)
+        {
+            if (audioSource.isPlaying)
+            {
+                return;
+            }
+        }
+        AudioSource randomAudioSource = audioSources[Random.Range(0, audioSources.Count-1)];
+        if (randomAudioSource != null && !randomAudioSource.isPlaying)
+        {
+            randomAudioSource.Play();
         }
     }
 }

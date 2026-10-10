@@ -42,6 +42,7 @@ public class CubeFace : MonoBehaviour
     private void OnHitMeteorite()
     {
         meshRenderer.enabled = false;
+        ESTCube.PlayImpactSound();
     }
 
     
