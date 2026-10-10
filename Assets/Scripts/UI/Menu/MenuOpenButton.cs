@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MenuOpenButton : MonoBehaviour
 {
@@ -22,4 +23,25 @@ public class MenuOpenButton : MonoBehaviour
         Menu.gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
+
+    private void Update()
+    {
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            ToggleMenu();
+        }
+    }
+
+    public void ToggleMenu()
+    {
+        if (Menu.gameObject.activeSelf)
+        {
+            CloseMenu();
+        }
+        else
+        {
+            OpenMenu();
+        }
+    }
+
 }
