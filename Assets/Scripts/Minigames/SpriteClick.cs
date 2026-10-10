@@ -23,7 +23,7 @@ public class SpriteClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Click");
+        if (Time.timeScale == 0f) return;
         if (!wireStartPoint.canDraw) return;
         if (wireStartPoint == null || wirePrefab == null || targetCamera == null)
         {
@@ -52,6 +52,7 @@ public class SpriteClick : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if (Time.timeScale == 0f) return;
         WireDrag wire = minigame.GetCurrentWire();
         if (wire != null)
         {
@@ -64,6 +65,7 @@ public class SpriteClick : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (Time.timeScale == 0f) return;
         if (activeWire != null && !activeWire.GetComponent<WireDrag>().isComplete)
         {
             Destroy(activeWire);

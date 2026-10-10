@@ -2,28 +2,24 @@ using UnityEngine;
 
 public class MenuOpenButton : MonoBehaviour
 {
-    public GameObject Menu;
-    private bool isMenuOpen;
+    [SerializeField] private Menu Menu;
+    public static MenuOpenButton Instance { get; private set; }
+
+    private void Start()
+    {
+        CloseMenu();
+    }
+
     public void OpenMenu()
     {
-        isMenuOpen = true;
-        Menu.SetActive(isMenuOpen);
+        Menu.gameObject.SetActive(true);
+        Menu.OpenMainMenuButtons();
+        Time.timeScale = 0f;
     }
 
     public void CloseMenu()
     {
-        isMenuOpen=false;
-        Menu.SetActive(isMenuOpen);
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        isMenuOpen = Menu.activeSelf;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Menu.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

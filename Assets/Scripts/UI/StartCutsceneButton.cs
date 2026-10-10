@@ -8,7 +8,7 @@ public class StartCutsceneButton : MonoBehaviour
     public GameObject ButtonPanel;
     public VideoPlayer videoPlayer;
 
-    public void ActivateVideo()
+    private void ActivateVideo()
     {
         videoPlayer.Play();
         ButtonPanel.SetActive(false);

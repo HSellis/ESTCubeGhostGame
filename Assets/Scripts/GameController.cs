@@ -46,11 +46,11 @@ public class GameController : MonoBehaviour
             Debug.LogError("Keyboard is null!");
             return;
         }
-        if (keyboard.upArrowKey.isPressed)
+        if (keyboard.rightArrowKey.isPressed)
         {
             changeDirection += 1f;
         }
-        if (keyboard.downArrowKey.isPressed)
+        if (keyboard.leftArrowKey.isPressed)
         {
             changeDirection -= 1f;
         }
