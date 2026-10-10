@@ -6,8 +6,10 @@ public class Meteorite_Spawner : MonoBehaviour
 
     public GameObject meteoritePrefab2;
     public GameObject meteoritePrefab3;
-    private float spawnInterval = 2f;
-    public float spawnTimeAdded = 2f;
+    public float spawnInterval = 2f;
+    public float spawnTimeIntervalLower = 7f;
+    public float spawnTimeIntervalUpper = 10f;
+    public float spawnHeightRange = 1f;
     private Vector3 SpawnPosition = new Vector3(0f, 0f, 0f);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,8 +23,9 @@ public class Meteorite_Spawner : MonoBehaviour
         spawnInterval -= Time.deltaTime;
         if (spawnInterval <= 0)
         {
-            SpawnPosition = transform.position + new Vector3(0f, Random.Range(-1f, 1f), 0f);
+            SpawnPosition = transform.position + new Vector3(0f, Random.Range(-spawnHeightRange, spawnHeightRange), 0f);
             SpawnMeteorite();
+            float spawnTimeAdded = Random.Range(spawnTimeIntervalLower, spawnTimeIntervalUpper);
             spawnInterval = Time.deltaTime + spawnTimeAdded;
         }
     }
