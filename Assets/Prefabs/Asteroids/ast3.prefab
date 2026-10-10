@@ -85,8 +85,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Meteorite_On_Spawn
   rb: {fileID: 4355344562971619923}
   RotationSpeed: 1
-  MoveSpeed: 5
-  scale: 20
+  MoveSpeedLower: 2
+  MoveSpeedUpper: 7
+  scaleLower: 15
+  scaleUpper: 30
   RotationAxis: {x: 0, y: 0, z: 1}
 --- !u!54 &4355344562971619923
 Rigidbody:

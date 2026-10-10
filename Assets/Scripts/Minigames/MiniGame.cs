@@ -4,6 +4,7 @@ public abstract class MiniGame : MonoBehaviour
 {
     public Transform cameraFocusTransform;
     public GameObject cubeFaceCover;
+    public ESTCube estCube;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,4 +25,13 @@ public abstract class MiniGame : MonoBehaviour
     }
 
     protected abstract void ResetMinigame();
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Meteorite meteorite = collision.gameObject.GetComponent<Meteorite>();
+        if (meteorite != null)
+        {
+            estCube.OnCollideWithAsteroid();
+        }
+    }
 }

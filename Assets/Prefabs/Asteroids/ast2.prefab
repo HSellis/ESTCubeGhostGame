@@ -85,8 +85,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Meteorite_On_Spawn
   rb: {fileID: 561158487568792980}
   RotationSpeed: 1
-  MoveSpeed: 5
-  scale: 1
+  MoveSpeedLower: 2
+  MoveSpeedUpper: 7
+  scaleLower: 15
+  scaleUpper: 30
   RotationAxis: {x: 0, y: 0, z: 1}
 --- !u!135 &7452368840830106822
 SphereCollider:

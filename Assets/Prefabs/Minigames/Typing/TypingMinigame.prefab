@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 3740571735932583605}
   - component: {fileID: 557703502004801313}
   - component: {fileID: 5125606714532227484}
+  - component: {fileID: 9198861859744263887}
   m_Layer: 0
   m_Name: TypingMinigame
   m_TagString: Untagged
@@ -348,6 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1592b88d12f0746409e4018baace59a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextGenerator
+  cameraFocusTransform: {fileID: 0}
+  cubeFaceCover: {fileID: 0}
   GeneratedText: {fileID: 455682911492448789}
   TypedText: {fileID: 1014855935548909660}
 --- !u!212 &5125606714532227484
@@ -410,3 +413,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!65 &9198861859744263887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928592552099554787}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000004, y: 1, z: 0.025}
+  m_Center: {x: 0, y: 0, z: 0}

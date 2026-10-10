@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioRandomizer))]
 public class CubeFace : MonoBehaviour
 {
     public static List<AudioSource> audioSources;
+    private AudioRandomizer audioRandomizer;
     private void Awake()
     {
         audioSources = new List<AudioSource>(GetComponents<AudioSource>());
+        audioRandomizer = GetComponent<AudioRandomizer>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,23 +37,8 @@ public class CubeFace : MonoBehaviour
 
     private void OnHitMeteorite()
     {
-        PlayImpactSound();
+        Debug.Log("meteorite collision");
+        audioRandomizer.Play();
         gameObject.SetActive(false);
-    }
-
-    private void PlayImpactSound()
-    {
-        foreach (AudioSource audioSource in audioSources)
-        {
-            if (audioSource.isPlaying)
-            {
-                return;
-            }
-        }
-        AudioSource randomAudioSource = audioSources[Random.Range(0, audioSources.Count - 1)];
-        if (randomAudioSource != null && !randomAudioSource.isPlaying)
-        {
-            randomAudioSource.Play();
-        }
     }
 }
