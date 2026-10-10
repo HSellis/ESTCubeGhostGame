@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class MiniGame : MonoBehaviour
 {
+    public Transform cameraFocusTransform;
+    public GameObject cubeFaceCover;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +15,10 @@ public class MiniGame : MonoBehaviour
     void Update()
     {
         
+    }
+
+    protected void RepairComplete()
+    {
+        cubeFaceCover.SetActive(true);
     }
 }

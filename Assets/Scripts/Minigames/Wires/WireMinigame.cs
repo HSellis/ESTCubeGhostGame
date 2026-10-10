@@ -1,9 +1,7 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class WireMiniGame : MonoBehaviour
+public class WireMiniGame : MiniGame
 {
-    public CubeFace cubeFace;
     private GameController gameController;
     private WireDrag CurrentWire;
 
@@ -33,7 +31,7 @@ public class WireMiniGame : MonoBehaviour
         foreach (WireDragSpot wire in WireSpots) {
             if (wire.canDraw) return;
         }
-        gameController.ZoomOutFromCube();
-        cubeFace.RepairComplete();
+        gameController.ZoomOutFromMiniGame();
+        RepairComplete();
     }
 }

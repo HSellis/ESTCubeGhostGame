@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
-public class TextGenerator : MonoBehaviour
+public class TextGenerator : MiniGame
 {
     public TextMesh GeneratedText;
     public TextMesh TypedText;

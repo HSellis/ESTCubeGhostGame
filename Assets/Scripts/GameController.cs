@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
         {
             if (viewState == 2)
             {
-                ZoomOutFromCube();
+                ZoomOutFromMiniGame();
             }
         }
     }
@@ -93,19 +93,19 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ZoomToCubeFace(CubeFace cubeFace)
+    public void ZoomToMiniGame(MiniGame minigame)
     {
         viewState = 1;
         
-        DOTweenCustomUtils.DOMoveInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, Vector3.zero, cameraMovementSpeed);
-        DOTweenCustomUtils.DORotateInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, cameraMovementSpeed).OnComplete(() =>
+        DOTweenCustomUtils.DOMoveInTargetLocalSpace(camera.transform, minigame.cameraFocusTransform, Vector3.zero, cameraMovementSpeed);
+        DOTweenCustomUtils.DORotateInTargetLocalSpace(camera.transform, minigame.cameraFocusTransform, cameraMovementSpeed).OnComplete(() =>
         {
-            camera.transform.parent = cubeFace.transform;
+            camera.transform.parent = minigame.transform;
             viewState = 2;
         });
     }
 
-    public void ZoomOutFromCube()
+    public void ZoomOutFromMiniGame()
     {
         viewState = 1;
         camera.transform.parent = null;
