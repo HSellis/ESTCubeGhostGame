@@ -54,7 +54,7 @@ public class SpriteClick : MonoBehaviour
         WireDrag wire = minigame.GetCurrentWire();
         if (wire != null)
         {
-            if (wire.startPoint != this.wireStartPoint)
+            if (wire.startPoint != this.wireStartPoint && wire.startPoint.wireColor == this.wireStartPoint.wireColor)
             {
                 wire.SetWireCompleted(wireStartPoint);
             }
