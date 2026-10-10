@@ -21,7 +21,7 @@ public class Meteorite_Spawner : MonoBehaviour
         spawnInterval -= Time.deltaTime;
         if (spawnInterval <= 0)
         {
-            SpawnPosition = new Vector3(0f, Random.Range(-1f, 1f), 0f);
+            SpawnPosition = transform.position + new Vector3(0f, Random.Range(-1f, 1f), 0f);
             SpawnMeteorite();
             spawnInterval = Time.deltaTime + spawnTimeAdded;
         }
