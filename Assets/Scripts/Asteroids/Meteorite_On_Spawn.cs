@@ -9,7 +9,7 @@ public class Meteorite_On_Spawn : MonoBehaviour
     public Vector3 RotationAxis = new Vector3(0f, 0f, 1f);
     
     private float StartScale=0f;
-    public float LifeTime = 2f;
+    private float LifeTime = 12f;
 
     private bool IsScalingDown = false;
   
@@ -36,10 +36,10 @@ public class Meteorite_On_Spawn : MonoBehaviour
 
 
         LifeTime -= Time.deltaTime * 1f;
-        if (LifeTime <= 0 and !IsScalingDown)
+        if ((LifeTime <= 0) & !IsScalingDown)
         {   
             IsScalingDown = true;
-            transform.DOLocalScale(new Vector3(0f, 0f, 0f), 1f).OnComplete(() => Destroy(gameObject));
+            transform.DOScale(new Vector3(0f, 0f, 0f), 2f).OnComplete(() => Destroy(gameObject));
         }
 
     }
