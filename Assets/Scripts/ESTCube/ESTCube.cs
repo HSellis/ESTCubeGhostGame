@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ESTCube : MonoBehaviour
@@ -25,36 +24,19 @@ public class ESTCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleCableLength();
+        
     }
 
-    private void HandleCableLength()
+    public void MoveCable(float changeDirection)
     {
-        float changeDirection = 0f;
-        Keyboard keyboard = Keyboard.current;
-        if (keyboard != null)
+        Vector3 scale = cableTransform.localScale;
+        float cableLength = scale.z + changeDirection * cableChangeSpeed * Time.deltaTime;
+        if (cableLength >= minCableLength && cableLength <= maxCableLength)
         {
-            if (keyboard.upArrowKey.isPressed)
-            {
-                changeDirection += 1f;
-            }
-            if (keyboard.downArrowKey.isPressed)
-            {
-                changeDirection -= 1f;
-            }
-        }
+            scale.z = cableLength;
+            cableTransform.localScale = scale;
 
-        if (changeDirection != 0f)
-        {
-            Vector3 scale = cableTransform.localScale;
-            float cableLength = scale.z + changeDirection * cableChangeSpeed * Time.deltaTime;
-            if (cableLength >= minCableLength && cableLength <= maxCableLength)
-            {
-                scale.z = cableLength;
-                cableTransform.localScale = scale;
-
-                AdjustAngularVelocity(changeDirection);
-            }
+            AdjustAngularVelocity(changeDirection);
         }
     }
 

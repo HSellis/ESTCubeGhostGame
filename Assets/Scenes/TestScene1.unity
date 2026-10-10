@@ -290,6 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   camera: {fileID: 330585545}
   cameraMovementSpeed: 1.5
+  estCube: {fileID: 828501419}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +418,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &828501419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5994156417735233960, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
+  m_PrefabInstance: {fileID: 5775608983810510651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d6cda6cc21aa744a0ca191ba017840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ESTCube
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

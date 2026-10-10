@@ -27,6 +27,6 @@ public class WireMiniGame : MonoBehaviour
         foreach (WireDragSpot wire in WireSpots) {
             if (wire.canDraw) return;
         }
-        gameController.OnCompleteMinigame();
+        gameController.ZoomOutFromCube();
     }
 }
