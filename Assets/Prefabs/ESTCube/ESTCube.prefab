@@ -135,10 +135,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ESTCube
   startAngularVelocity: {x: 1, y: 1, z: 1}
   cableTransform: {fileID: 8072398648462086300}
-  cableChangeSpeed: 0.5
-  minTipDistance: 1.5
+  cableChangeSpeed: 1.5
+  minTipDistance: 1
   maxTipDistance: 10
   velocityChangeSpeed: 1.002
+  maxAngularVelocity: 4
   cubetip: {fileID: 6534529050035152594}
 --- !u!54 &8570295289213075901
 Rigidbody:
