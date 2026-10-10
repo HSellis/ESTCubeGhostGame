@@ -1,12 +1,13 @@
-using System;
-using UnityEditor.Rendering;
-using UnityEngine;
 using DG.Tweening;
+using System;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameController : MonoBehaviour
 {
     public Camera camera;
     public float cameraMovementSpeed = 1.5f;
+    public ESTCube estCube;
     private bool isZoomedIn = false;
     private Vector3 cameraZoomedOutPosition;
     private Quaternion cameraZoomedOutRotation;
@@ -35,7 +36,24 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float changeDirection = 0f;
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard != null)
+        {
+            if (keyboard.upArrowKey.isPressed)
+            {
+                changeDirection += 1f;
+            }
+            if (keyboard.downArrowKey.isPressed)
+            {
+                changeDirection -= 1f;
+            }
+        }
+
+        if (changeDirection != 0f && !isZoomedIn)
+        {
+            estCube.MoveCable(changeDirection);
+        }
     }
 
     public bool IsZoomedIn
