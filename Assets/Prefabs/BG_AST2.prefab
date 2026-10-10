@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5f1f036050ba77845a49ec9b62e5e60b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8afb12f30bcccd04795a12a0b00dc22f, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f1f036050ba77845a49ec9b62e5e60b, type: 3}
       propertyPath: m_Name
       value: BG_AST2
@@ -59,12 +63,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f1f036050ba77845a49ec9b62e5e60b, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1057753865661153478}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f1f036050ba77845a49ec9b62e5e60b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1165566449887148849}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f1f036050ba77845a49ec9b62e5e60b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8905405958889815879}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1f036050ba77845a49ec9b62e5e60b, type: 3}
 --- !u!1 &4700280445993174517 stripped
 GameObject:
@@ -83,56 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde30258121039d4ab70821c886e37ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BG_Meteorites
-  rb: {fileID: 1165566449887148849}
   RotationSpeed: 1
   MoveSpeed: 5
   scale: 20
   RotationAxis: {x: 0, y: 0, z: 1}
---- !u!54 &1165566449887148849
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4700280445993174517}
-  serializedVersion: 5
-  m_Mass: 4
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &8905405958889815879
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4700280445993174517}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.013615408
-  m_Center: {x: -0.00052560493, y: 0.00008031119, z: 0.00003371713}
