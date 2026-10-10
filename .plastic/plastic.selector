@@ -1,0 +1,4 @@
+repository "Bird/ESTCubeGhostGame@5774110228505@cloud"
+  path "/"
+    br "/main"
+    co "/main"
