@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444678dc39dca4047b720bb6392a5ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteClick
-  wireStartPoint: {fileID: 4086168797719311743}
+  wireStartPoint: {fileID: 7994462036445234454}
   wirePrefab: {fileID: 2010405744895824500, guid: ca273ae485fc6f14b9c5c851ebf5df2e, type: 3}
+  targetCamera: {fileID: 0}
 --- !u!61 &5177452880047050183
 BoxCollider2D:
   m_ObjectHideFlags: 0

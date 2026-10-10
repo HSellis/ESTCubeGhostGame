@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d977c89d79a4f439bc76ba33d1e979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Meteorite_Spawner
-  meteoritePrefab: {fileID: 7505409257432835171, guid: 734707fd203c6ae4f9220cd5a39ef871, type: 3}
+  meteoritePrefab1: {fileID: 2718456824046162328, guid: 1af33fbd01977dc40b2a47a8758878ce, type: 3}
+  meteoritePrefab2: {fileID: 2863051787291884995, guid: 4999d586c0db7b5478263bcb7f97ec5b, type: 3}
+  meteoritePrefab3: {fileID: 6349189097811464370, guid: ea9d7679938ab70459e2a0b53994b9c3, type: 3}
   spawnTimeAdded: 2

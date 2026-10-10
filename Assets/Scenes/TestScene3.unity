@@ -127,6 +127,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 656455587}
     m_Modifications:
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6728063820789990092, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.45
@@ -171,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clickpoint (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7994462036445234454, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: wireColor
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -189,6 +205,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 656455587}
     m_Modifications:
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6728063820789990092, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.45
@@ -343,6 +371,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 656455587}
     m_Modifications:
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6728063820789990092, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.45
@@ -405,6 +441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 656455587}
     m_Modifications:
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6728063820789990092, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.45
@@ -449,6 +489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clickpoint (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7994462036445234454, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: wireColor
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -467,6 +511,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 656455587}
     m_Modifications:
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6728063820789990092, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.45
@@ -511,6 +567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clickpoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7994462036445234454, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: wireColor
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -529,6 +589,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 656455587}
     m_Modifications:
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483181436712610851, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6728063820789990092, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.45
@@ -573,6 +641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clickpoint (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7994462036445234454, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: wireColor
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -598,6 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 656455587}
   - component: {fileID: 656455586}
+  - component: {fileID: 656455588}
   m_Layer: 0
   m_Name: WiresMinigame
   m_TagString: Untagged
@@ -689,6 +762,18 @@ Transform:
   - {fileID: 75823052}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &656455588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656455585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa900c087b3cb6141a160c74ddd94ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WireMiniGame
 --- !u!1 &1343363113
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clickpoint (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7994462036445234454, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: wireColor
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -939,6 +1028,10 @@ PrefabInstance:
     - target: {fileID: 7054300083070484566, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
       propertyPath: m_Name
       value: Clickpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994462036445234454, guid: 2aee61672b6c7d045a87c2667d350cd6, type: 3}
+      propertyPath: wireColor
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: spawnTimeAdded
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4960938157313811471, guid: c6e3b3571b276094f91be53c8515bc68, type: 3}
+      propertyPath: meteoritePrefab
+      value: 
+      objectReference: {fileID: 2718456824046162328, guid: 1af33fbd01977dc40b2a47a8758878ce, type: 3}
     - target: {fileID: 8859186696156530550, guid: c6e3b3571b276094f91be53c8515bc68, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1

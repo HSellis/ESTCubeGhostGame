@@ -15,7 +15,7 @@ public class Meteorite_On_Spawn : MonoBehaviour
         RotationSpeed = Random.Range(20f, 300f);
         transform.localScale = new Vector3(scale, scale, scale);
         RotationAxis = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-        rb.linearVelocity = new Vector3(1f, 0f, 0f) * MoveSpeed;
+        rb.linearVelocity = new Vector3(-1f, 0f, 0f) * MoveSpeed;
     }
     void Update()
     {
