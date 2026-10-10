@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CubeFace : MonoBehaviour
 {
+    public Transform cameraFocusTransform;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

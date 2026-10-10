@@ -1,22 +1,25 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Camera))]
 public class MouseClicker : MonoBehaviour
 {
     [Header("Raycast Settings")]
-    public Camera targetCamera;
+    public Camera camera;
     public LayerMask hitLayers = ~0;
     public float maxDistance = 100;
+    public float cameraMovementSpeed = 1.5f;
 
     private void Awake()
     {
-        if (targetCamera == null)
+        if (camera == null)
         {
-            targetCamera = GetComponent<Camera>();
+            camera = GetComponent<Camera>();
         }
-        if (targetCamera == null)
+        if (camera == null)
         {
-            targetCamera = Camera.main;
+            camera = Camera.main;
         }
     }
 
@@ -47,13 +50,18 @@ public class MouseClicker : MonoBehaviour
 
     public void HandleClick(Vector2 screenPosition)
     {
-        Ray ray = targetCamera.ScreenPointToRay(screenPosition);
+        Ray ray = camera.ScreenPointToRay(screenPosition);
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, hitLayers))
         {
             CubeFace cubeFace = hit.collider.GetComponent<CubeFace>();
             if (cubeFace != null)
             {
-                cubeFace.Click();
+                //cubeFace.Click();
+                DOTweenCustomUtils.DOMoveInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, Vector3.zero, cameraMovementSpeed);
+                DOTweenCustomUtils.DORotateInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, cameraMovementSpeed).OnComplete(() =>
+                {
+                    camera.transform.parent = cubeFace.transform;
+                });
             }
         }
     }
