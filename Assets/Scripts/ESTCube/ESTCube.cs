@@ -60,7 +60,6 @@ public class ESTCube : MonoBehaviour
 
     private void AdjustAngularVelocity(float change)
     {
-        Debug.Log(rb.angularVelocity);
         float changeValue = velocityChangeSpeed + Time.deltaTime;
 
         if (change < 0)
