@@ -12,6 +12,7 @@ public class ESTCube : MonoBehaviour
     public float minTipDistance = 0.1f;
     public float maxTipDistance = 1.5f;
     public float velocityChangeSpeed = 5f;
+    public float maxAngularVelocity = 4f;
 
     public GameObject cubetip;
     private Rigidbody rb;
@@ -56,10 +57,14 @@ public class ESTCube : MonoBehaviour
     private void AdjustAngularVelocity(float change)
     {
         float changeValue = velocityChangeSpeed + Time.deltaTime;
-
+        Debug.Log(rb.angularVelocity.magnitude);
         if (change < 0)
         {
-            rb.angularVelocity = new Vector3(rb.angularVelocity.x * changeValue, rb.angularVelocity.y * changeValue, rb.angularVelocity.z);
+            if (rb.angularVelocity.magnitude < maxAngularVelocity)
+            {
+                rb.angularVelocity = new Vector3(rb.angularVelocity.x * changeValue, rb.angularVelocity.y * changeValue, rb.angularVelocity.z);
+            }
+            
         }
         else
         {
