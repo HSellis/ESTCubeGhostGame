@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireDragSpot
   wireColor: 0
+  canDraw: 1
 --- !u!1 &7054300083070484566
 GameObject:
   m_ObjectHideFlags: 0

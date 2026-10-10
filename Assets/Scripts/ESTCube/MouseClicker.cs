@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +8,7 @@ public class MouseClicker : MonoBehaviour
     public Camera camera;
     public LayerMask hitLayers = ~0;
     public float maxDistance = 100;
-    public float cameraMovementSpeed = 1.5f;
+    public GameController gameController;
 
     private void Awake()
     {
@@ -25,7 +24,10 @@ public class MouseClicker : MonoBehaviour
 
     private void Update()
     {
-        CheckMouseClick();
+        if (!gameController.IsZoomedIn)
+        {
+            CheckMouseClick();
+        }
     }
 
     private void CheckMouseClick()
@@ -56,12 +58,7 @@ public class MouseClicker : MonoBehaviour
             CubeFace cubeFace = hit.collider.GetComponent<CubeFace>();
             if (cubeFace != null)
             {
-                //cubeFace.Click();
-                DOTweenCustomUtils.DOMoveInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, Vector3.zero, cameraMovementSpeed);
-                DOTweenCustomUtils.DORotateInTargetLocalSpace(camera.transform, cubeFace.cameraFocusTransform, cameraMovementSpeed).OnComplete(() =>
-                {
-                    camera.transform.parent = cubeFace.transform;
-                });
+                gameController.ZoomToCubeFace(cubeFace);
             }
         }
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WireMiniGame : MonoBehaviour
 {
-
+    public GameController gameController;
     private WireDrag CurrentWire;
 
     private WireDragSpot[] WireSpots;
@@ -27,6 +27,6 @@ public class WireMiniGame : MonoBehaviour
         foreach (WireDragSpot wire in WireSpots) {
             if (wire.canDraw) return;
         }
-        Debug.Log("Minigame done");
+        gameController.OnCompleteMinigame();
     }
 }

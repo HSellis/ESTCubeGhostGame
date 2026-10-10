@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -269,11 +270,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa99d67d1520667448f0fa12dcaff0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseClicker
-  targetCamera: {fileID: 330585545}
+  camera: {fileID: 0}
   hitLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   maxDistance: Infinity
+  gameController: {fileID: 330585549}
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360a653bd823e574b9f45dd2c252389b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameController
+  camera: {fileID: 330585545}
+  cameraMovementSpeed: 1.5
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ESTCube
       objectReference: {fileID: 0}
+    - target: {fileID: 6808731461705191717, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 330585549}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
