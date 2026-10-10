@@ -37,18 +37,25 @@ public class ESTCube : MonoBehaviour
     }
 
     public void MoveCable(float changeDirection)
-    {   
+    {
         Vector3 fromCenterToTip = cubetip.transform.position - transform.position;
-        float cableLength = Mathf.Clamp(fromCenterToTip.magnitude, minTipDistance, maxTipDistance);
-        if (cableLength >= minTipDistance && cableLength <= maxTipDistance)
+        Vector3 tipDirection = fromCenterToTip.sqrMagnitude > Mathf.Epsilon
+            ? fromCenterToTip.normalized
+            : transform.forward;
+        float currentTipDistance = fromCenterToTip.magnitude;
+        float newTipDistance = Mathf.Clamp(
+            currentTipDistance + changeDirection * cableChangeSpeed * Time.deltaTime,
+            minTipDistance,
+            maxTipDistance);
+
+        if (!Mathf.Approximately(currentTipDistance, newTipDistance))
         {
             AudioSource cableAudioSource = audioSources[2];
             if (cableAudioSource != null && !cableAudioSource.isPlaying)
             {
                 cableAudioSource.Play();
             }
-            Vector3 newPosition = fromCenterToTip + fromCenterToTip.normalized * changeDirection * cableChangeSpeed * Time.deltaTime;
-            cubetip.transform.position = newPosition;
+            cubetip.transform.position = transform.position + tipDirection * newTipDistance;
 
             AdjustAngularVelocity(changeDirection);
         }
