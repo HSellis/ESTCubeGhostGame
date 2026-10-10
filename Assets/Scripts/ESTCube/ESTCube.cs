@@ -9,13 +9,14 @@ public class ESTCube : MonoBehaviour
     [Header("Cable Settings")]
     public Transform cableTransform;
     public float cableChangeSpeed = 5f;
-    public float minCableLength = 0.1f;
-    public float maxCableLength = 1.5f;
+    public float minTipDistance = 0.1f;
+    public float maxTipDistance = 1.5f;
     public float velocityChangeSpeed = 5f;
     public float maxAngularVelocity = 4f;
 
+    public GameObject cubetip;
     private Rigidbody rb;
-
+    private LineRenderer lineRenderer;
     public static List<AudioSource> audioSources;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,27 +24,31 @@ public class ESTCube : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.angularVelocity = startAngularVelocity;
         audioSources = new List<AudioSource>(GetComponents<AudioSource>());
+        lineRenderer = cubetip.GetComponent<LineRenderer>();
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, cubetip.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, cubetip.transform.position);
     }
 
     public void MoveCable(float changeDirection)
     {   
-        Vector3 scale = cableTransform.localScale;
-        float cableLength = scale.z + changeDirection * cableChangeSpeed * Time.deltaTime;
-        if (cableLength >= minCableLength && cableLength <= maxCableLength)
+        Vector3 fromCenterToTip = cubetip.transform.position - transform.position;
+        float cableLength = Mathf.Clamp(fromCenterToTip.magnitude, minTipDistance, maxTipDistance);
+        if (cableLength >= minTipDistance && cableLength <= maxTipDistance)
         {
             AudioSource cableAudioSource = audioSources[2];
             if (cableAudioSource != null && !cableAudioSource.isPlaying)
             {
                 cableAudioSource.Play();
             }
-            scale.z = cableLength;
-            cableTransform.localScale = scale;
+            Vector3 newPosition = fromCenterToTip + fromCenterToTip.normalized * changeDirection * cableChangeSpeed * Time.deltaTime;
+            cubetip.transform.position = newPosition;
 
             AdjustAngularVelocity(changeDirection);
         }
