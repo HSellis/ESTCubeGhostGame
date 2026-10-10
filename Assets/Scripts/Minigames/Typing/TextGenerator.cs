@@ -72,4 +72,9 @@ public class TextGenerator : MiniGame
     void Victory()
     {
     }
+
+    protected override void ResetMinigame()
+    {
+        throw new System.NotImplementedException();
+    }
 }

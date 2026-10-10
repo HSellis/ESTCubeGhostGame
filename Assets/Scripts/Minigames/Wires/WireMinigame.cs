@@ -34,4 +34,16 @@ public class WireMiniGame : MiniGame
         gameController.ZoomOutFromMiniGame();
         RepairComplete();
     }
+
+    protected override void ResetMinigame()
+    {
+        foreach (WireDragSpot wire in WireSpots)
+        {
+            wire.canDraw = true;
+        }
+        foreach (WireDrag wireDrag in GetComponentsInChildren<WireDrag>())
+        {
+            Destroy(wireDrag.gameObject);
+        }
+    }
 }

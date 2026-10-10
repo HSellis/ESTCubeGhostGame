@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MiniGame : MonoBehaviour
+public abstract class MiniGame : MonoBehaviour
 {
     public Transform cameraFocusTransform;
     public GameObject cubeFaceCover;
@@ -20,5 +20,8 @@ public class MiniGame : MonoBehaviour
     protected void RepairComplete()
     {
         cubeFaceCover.SetActive(true);
+        ResetMinigame();
     }
+
+    protected abstract void ResetMinigame();
 }
