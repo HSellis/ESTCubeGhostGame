@@ -8,12 +8,19 @@ public class GameController : MonoBehaviour
     public Camera camera;
     public float cameraMovementSpeed = 1.5f;
     public ESTCube estCube;
+
+    public MeteoriteSpawner NONBGMeteoriteSpawner;
+    public MeteoriteSpawner BGMeteoriteSpawner;
+
+    public TextMesh GameEndText;
+    public float GameDuration = 300f;
     // 0 - zoomed out
     // 1 - zooming
     // 2 - zoomed in
     private int viewState = 0;
     private Vector3 cameraZoomedOutPosition;
     private Quaternion cameraZoomedOutRotation;
+
 
     private void Awake()
     {
@@ -33,12 +40,22 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameEndText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameDuration == 0)
+        {
+            GameDuration = -1;
+            EndGame();
+            // Handle game over logic here
+        }
+        else
+        {
+            GameDuration -= Time.deltaTime;
+        }
         float changeDirection = 0f;
         Keyboard keyboard = Keyboard.current;
         if (keyboard == null)
@@ -98,4 +115,15 @@ public class GameController : MonoBehaviour
             viewState = 0;
         });
     }
+
+    private void EndGame()
+    {
+        // Stop meteorite spawning
+        NONBGMeteoriteSpawner.gameObject.SetActive(false);
+        BGMeteoriteSpawner.gameObject.SetActive(false);
+
+        // Display game over message
+        GameEndText.gameObject.SetActive(true);
+    }
+    
 }
