@@ -24,7 +24,7 @@ public class MouseClicker : MonoBehaviour
 
     private void Update()
     {
-        if (!gameController.IsZoomedIn)
+        if (gameController.ViewState == 0)
         {
             CheckMouseClick();
         }
