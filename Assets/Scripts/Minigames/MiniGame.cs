@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -29,16 +30,16 @@ public abstract class MiniGame : MonoBehaviour
         }
     }
 
-    private void OnCubeFaceDetach()
-    {
-        isHit = true;
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
         gameController = GameObject.Find("Main Camera").GetComponent<GameController>();
         estCube = GameObject.Find("ESTCube").GetComponent<ESTCube>();
+    }
+
+    private void OnCubeFaceDetach()
+    {
+        isHit = true;
     }
 
 
@@ -70,7 +71,7 @@ public abstract class MiniGame : MonoBehaviour
 
     protected async void RepairComplete()
     {
-        cubeFaceCover.Attach();
+        cubeFaceCover.OnRepair();
         ResetMinigame();
         await Task.Delay(1000);
         gameController.ZoomOutFromMiniGame();
@@ -86,7 +87,13 @@ public abstract class MiniGame : MonoBehaviour
         if (meteorite != null && !meteorite.HasCollided && cubeFaceCover.gameObject.activeSelf)
         {
             meteorite.OnCollisionWithESTCube();
-            estCube.OnCollideWithAsteroid();
+            estCube.OnCollideWithAsteroid();            
         }
+    }
+
+    public void ZoomToMinigame()
+    {
+        isMiniGameActive = true;
+        cubeFaceCover.HideRepairIndicator();
     }
 }

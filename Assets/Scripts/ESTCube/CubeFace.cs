@@ -14,6 +14,8 @@ public class CubeFace : MonoBehaviour
     private Vector3 originalLocalPosition;
     private Quaternion originalLocalRotation;
     private Vector3 originalLocalScale;
+    private bool hasBeenHitAtLeastOnce = false;
+    public GameObject repairIndicator;
 
     private void Awake()
     {
@@ -27,6 +29,10 @@ public class CubeFace : MonoBehaviour
         originalLocalPosition = transform.localPosition;
         originalLocalRotation = transform.localRotation;
         originalLocalScale = transform.localScale;
+
+        repairIndicator.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
@@ -35,14 +41,20 @@ public class CubeFace : MonoBehaviour
         
     }
 
-    public void Detach()
+    public void OnHitAsteroid()
     {
         rb.isKinematic = false;
         transform.parent = null;
         Detached?.Invoke();
+
+        if (!hasBeenHitAtLeastOnce)
+        {
+            hasBeenHitAtLeastOnce = true;
+            repairIndicator.SetActive(true);
+        }
     }
 
-    public void Attach()
+    public void OnRepair()
     {
         rb.isKinematic = true;
         transform.parent = originalParent;
@@ -51,5 +63,10 @@ public class CubeFace : MonoBehaviour
 
         transform.localScale = Vector3.one * 0.01f;
         transform.DOScale(originalLocalScale, 0.5f);
+    }
+
+    public void HideRepairIndicator()
+    {
+        repairIndicator.SetActive(false);
     }
 }

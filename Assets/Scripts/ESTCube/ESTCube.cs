@@ -89,7 +89,7 @@ public class ESTCube : MonoBehaviour
         generalAudioSource.Play();
         foreach (CubeFace cubeFace in cubeFaces)
         {
-            cubeFace.Detach();
+            cubeFace.OnHitAsteroid();
         }
 
         await Task.Delay(cutsceneWaitTimeMilliseconds);

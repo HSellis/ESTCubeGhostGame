@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,8 @@ public class GameController : MonoBehaviour
 
     public float GameDuration = 300f;
     public string winCutsceneScene = "WinCutscene";
+    public int waitTimeBeforeWinCutsceneMs = 10000;
+
     // 0 - zoomed out
     // 1 - zooming
     // 2 - zoomed in
@@ -103,7 +106,7 @@ public class GameController : MonoBehaviour
         {
             camera.transform.parent = minigame.transform;
             viewState = 2;
-            minigame.isMiniGameActive = true;
+            minigame.ZoomToMinigame();
         });
     }
 
@@ -118,13 +121,14 @@ public class GameController : MonoBehaviour
         });
     }
 
-    private void EndGame()
+    private async void EndGame()
     {
         // Stop meteorite spawning
         NONBGMeteoriteSpawner.gameObject.SetActive(false);
         BGMeteoriteSpawner.gameObject.SetActive(false);
 
         // Show win cutscene
+        await Task.Delay(waitTimeBeforeWinCutsceneMs);
         SceneManager.LoadScene(winCutsceneScene);
     }
     
