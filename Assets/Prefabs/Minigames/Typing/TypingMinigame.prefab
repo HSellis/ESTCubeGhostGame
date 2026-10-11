@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TextGenerator
   cameraFocusTransform: {fileID: 0}
   cubeFaceCover: {fileID: 0}
+  estCube: {fileID: 0}
   GeneratedText: {fileID: 455682911492448789}
   TypedText: {fileID: 1014855935548909660}
 --- !u!212 &5125606714532227484
