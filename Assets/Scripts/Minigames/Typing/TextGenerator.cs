@@ -39,9 +39,9 @@ public class TextGenerator : MiniGame
         List<string> words = new List<string>()
         {
             "9w744d", "abd123", "xhz789", "hi2d73",
-            "pqr456", "stu789", "vwx012",
+            "lqr456", "stu789", "vwx012",
             "abc678", "def901", "ghi234",
-            "jkl567", "mno890", "pqr123", "stu456",
+            "jkl567", "mno890", "kqr123", "stu456",
             "vwx789", "yz012d", "abc345", "def678"
         };
 
