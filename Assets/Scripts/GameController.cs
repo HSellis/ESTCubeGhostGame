@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class GameController : MonoBehaviour
     private int viewState = 0;
     private Vector3 cameraZoomedOutPosition;
     private Quaternion cameraZoomedOutRotation;
+    private bool isEnding = false;
 
 
     private void Awake()
@@ -123,21 +125,46 @@ public class GameController : MonoBehaviour
         });
     }
 
-    public async void EndGame(bool isWin)
+    public void EndGame(bool isWin)
     {
+        if (isEnding)
+            return;
+
+        isEnding = true;
+
         // Stop meteorite spawning
         NONBGMeteoriteSpawner.gameObject.SetActive(false);
         BGMeteoriteSpawner.gameObject.SetActive(false);
 
-        // Show cutscene
+        StartCoroutine(EndGameRoutine(isWin));
+    }
+
+    private IEnumerator EndGameRoutine(bool isWin)
+    {
+        string sceneToLoad;
+        float waitTime;
+
         if (isWin)
         {
-            await Task.Delay(waitTimeBeforeLoseCutsceneMs);
-            SceneManager.LoadScene(loseCutsceneScene);
-        } else
+            sceneToLoad = winCutsceneScene;
+            waitTime = waitTimeBeforeWinCutsceneMs / 1000f;
+        }
+        else
         {
-            await Task.Delay(waitTimeBeforeWinCutsceneMs);
-            SceneManager.LoadScene(winCutsceneScene);
+            sceneToLoad = loseCutsceneScene;
+            waitTime = waitTimeBeforeLoseCutsceneMs / 1000f;
+        }
+
+        // Wait using real time, even if Time.timeScale is 0
+        yield return new WaitForSecondsRealtime(waitTime);
+
+        Debug.Log("Loading cutscene: " + sceneToLoad);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
+
+        if (operation == null)
+        {
+            Debug.LogError("Failed to start loading scene: " + sceneToLoad);
         }
     }
 }
