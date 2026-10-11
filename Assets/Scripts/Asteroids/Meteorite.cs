@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+[RequireComponent(typeof(AudioRandomizer))]
 public class Meteorite : MonoBehaviour
 {
     public Rigidbody rb;
@@ -11,12 +12,26 @@ public class Meteorite : MonoBehaviour
     public float scaleLower = 15f;
     public float scaleUpper = 30f;
     public Vector3 RotationAxis = new Vector3(0f, 0f, 1f);
+    private AudioRandomizer audioRandomizer;
     
     private float StartScale=0f;
     private float LifeTime = 12f;
 
     private bool IsScalingDown = false;
-  
+    private bool hasCollided = false;
+
+    public bool HasCollided
+    {
+        get
+        {
+            return hasCollided;
+        }
+    }
+
+    private void Awake()
+    {
+        audioRandomizer = GetComponent<AudioRandomizer>();
+    }
 
     void Start()
     {
@@ -35,9 +50,6 @@ public class Meteorite : MonoBehaviour
             StartScale += Time.deltaTime * 10f;
             transform.localScale = new Vector3(Mathf.Clamp(StartScale, 0f, scale), Mathf.Clamp(StartScale, 0f, scale), Mathf.Clamp(StartScale, 0f, scale));
         }
-        //transform.position += new Vector3(1f, 0f, 0f) * MoveSpeed * Time.deltaTime;
-        
-
 
         LifeTime -= Time.deltaTime * 1f;
         if ((LifeTime <= 0) & !IsScalingDown)
@@ -46,5 +58,22 @@ public class Meteorite : MonoBehaviour
             transform.DOScale(new Vector3(0f, 0f, 0f), 2f).OnComplete(() => Destroy(gameObject));
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collided with " + collision.gameObject.name);
+        CubeFace cubeFace = collision.gameObject.GetComponent<CubeFace>();
+        if (cubeFace != null && !hasCollided)
+        {
+            OnCollisionWithESTCube();
+            audioRandomizer.Play();
+            cubeFace.OnHitMeteorite();
+        }
+    }
+
+    public void OnCollisionWithESTCube()
+    {
+        hasCollided = true;
     }
 }

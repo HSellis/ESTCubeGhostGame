@@ -29,8 +29,9 @@ public abstract class MiniGame : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Meteorite meteorite = collision.gameObject.GetComponent<Meteorite>();
-        if (meteorite != null)
+        if (meteorite != null && !meteorite.HasCollided && cubeFaceCover.activeSelf)
         {
+            meteorite.OnCollisionWithESTCube();
             estCube.OnCollideWithAsteroid();
         }
     }

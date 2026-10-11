@@ -479,7 +479,7 @@ MonoBehaviour:
   NONBGMeteoriteSpawner: {fileID: 1249922867}
   BGMeteoriteSpawner: {fileID: 1005140839}
   GameEndText: {fileID: 780971836}
-  GameDuration: 5
+  GameDuration: 50
 --- !u!1001 &687797450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1075,6 +1075,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 541050891863939199, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b34007e0d5817f4a80a9d7730dc3d38, type: 3}
     - target: {fileID: 2768008536529133496, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
