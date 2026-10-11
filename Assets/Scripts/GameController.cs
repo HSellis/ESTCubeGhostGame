@@ -4,8 +4,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-using System.Collections;
 
 public class GameController : MonoBehaviour
 {
@@ -20,8 +18,7 @@ public class GameController : MonoBehaviour
     public string winCutsceneScene = "WinCutscene";
     public int waitTimeBeforeWinCutsceneMs = 10000;
     public string loseCutsceneScene = "LoseCutscene";
-    public int cutsceneWaitTimeMilliseconds = 4000;
-    private bool isEnding = false;
+    public int waitTimeBeforeLoseCutsceneMs = 4000;
 
     // 0 - zoomed out
     // 1 - zooming
@@ -126,46 +123,21 @@ public class GameController : MonoBehaviour
         });
     }
 
-    public void EndGame(bool isWin)
+    public async void EndGame(bool isWin)
     {
-        if (isEnding)
-            return;
-
-        isEnding = true;
-
         // Stop meteorite spawning
         NONBGMeteoriteSpawner.gameObject.SetActive(false);
         BGMeteoriteSpawner.gameObject.SetActive(false);
 
-        StartCoroutine(EndGameRoutine(isWin));
-    }
-
-    private IEnumerator EndGameRoutine(bool isWin)
-    {
-        string sceneToLoad;
-        float waitTime;
-
+        // Show cutscene
         if (isWin)
         {
-            sceneToLoad = winCutsceneScene;
-            waitTime = waitTimeBeforeWinCutsceneMs / 1000f;
-        }
-        else
+            await Task.Delay(waitTimeBeforeLoseCutsceneMs);
+            SceneManager.LoadScene(loseCutsceneScene);
+        } else
         {
-            sceneToLoad = loseCutsceneScene;
-            waitTime = cutsceneWaitTimeMilliseconds / 1000f;
-        }
-
-        // Wait using real time, even if Time.timeScale is 0
-        yield return new WaitForSecondsRealtime(waitTime);
-
-        Debug.Log("Loading cutscene: " + sceneToLoad);
-
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
-
-        if (operation == null)
-        {
-            Debug.LogError("Failed to start loading scene: " + sceneToLoad);
+            await Task.Delay(waitTimeBeforeWinCutsceneMs);
+            SceneManager.LoadScene(winCutsceneScene);
         }
     }
 }

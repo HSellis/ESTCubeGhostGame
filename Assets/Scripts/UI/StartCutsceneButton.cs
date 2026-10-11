@@ -12,7 +12,7 @@ public class StartCutsceneButton : MonoBehaviour
     {
         videoPlayer.Play();
         ButtonPanel.SetActive(false);
-        audioSource.PlayOneShot(introCutsceneClip);
+        //audioSource.PlayOneShot(introCutsceneClip);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
