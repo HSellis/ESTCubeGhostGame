@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class TextGenerator : MiniGame
 {
-    public TextMesh GeneratedText;
-    public TextMesh TypedText;
+    public TMP_Text GeneratedText;
+    public TMP_Text TypedText;
 
     private Keyboard keyboard;
 
@@ -62,7 +63,6 @@ public class TextGenerator : MiniGame
             if (TypedText.text == GeneratedText.text)
             {
                 RepairComplete();
-                
             }
             else
             {
@@ -73,6 +73,6 @@ public class TextGenerator : MiniGame
 
     protected override void ResetMinigame()
     {
-        
+
     }
 }

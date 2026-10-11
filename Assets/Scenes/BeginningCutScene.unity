@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
   videoPlayer: {fileID: 759437366}
-  sceneToLoad: TestScene1
+  sceneToLoad: Cube_asteroid_merge
 --- !u!1 &759437361
 GameObject:
   m_ObjectHideFlags: 0
