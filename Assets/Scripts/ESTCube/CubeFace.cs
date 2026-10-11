@@ -32,7 +32,7 @@ public class CubeFace : MonoBehaviour
         
     }
 
-    public async void OnHitMeteorite()
+    public async void Detach()
     {
         rb.isKinematic = false;
         transform.parent = null;

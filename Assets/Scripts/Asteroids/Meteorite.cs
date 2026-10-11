@@ -68,7 +68,7 @@ public class Meteorite : MonoBehaviour
         {
             OnCollisionWithESTCube();
             audioRandomizer.Play();
-            cubeFace.OnHitMeteorite();
+            cubeFace.Detach();
         }
     }
 

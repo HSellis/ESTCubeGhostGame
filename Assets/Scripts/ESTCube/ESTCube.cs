@@ -20,6 +20,7 @@ public class ESTCube : MonoBehaviour
 
     private Rigidbody rb;
     private LineRenderer lineRenderer;
+    private CubeFace[] cubeFaces;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +29,7 @@ public class ESTCube : MonoBehaviour
         lineRenderer = cubetip.GetComponent<LineRenderer>();
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, cubetip.transform.position);
+        cubeFaces = GetComponentsInChildren<CubeFace>();
     }
 
     // Update is called once per frame
@@ -80,6 +82,9 @@ public class ESTCube : MonoBehaviour
     public void OnCollideWithAsteroid()
     {
         generalAudioSource.Play();
-        Debug.Log("game over");
+        foreach (CubeFace cubeFace in cubeFaces)
+        {
+            cubeFace.Detach();
+        }
     }
 }
