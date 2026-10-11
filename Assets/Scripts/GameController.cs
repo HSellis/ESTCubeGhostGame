@@ -102,6 +102,7 @@ public class GameController : MonoBehaviour
         {
             camera.transform.parent = minigame.transform;
             viewState = 2;
+            minigame.isMiniGameActive = true;
         });
     }
 

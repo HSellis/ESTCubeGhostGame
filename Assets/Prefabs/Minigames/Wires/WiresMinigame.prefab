@@ -207,7 +207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa900c087b3cb6141a160c74ddd94ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireMiniGame
-  cubeFace: {fileID: 0}
+  cameraFocusTransform: {fileID: 0}
+  cubeFaceCover: {fileID: 0}
+  estCube: {fileID: 0}
+  electricityEffect: {fileID: 7023715993190025731, guid: 1dab3fecb8d9618458188dd7ef876d00, type: 3}
+  electricityEffectCD: 4
+  isMiniGameActive: 0
 --- !u!65 &5881290510092895130
 BoxCollider:
   m_ObjectHideFlags: 0
