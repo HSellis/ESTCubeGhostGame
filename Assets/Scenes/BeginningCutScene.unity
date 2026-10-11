@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomVideoPlayer
   player: {fileID: 759437366}
-  FilePath: cutscene_intro.mp4
+  FilePath: intro_cutscene_wmusic.mp4
 --- !u!1 &759437361
 GameObject:
   m_ObjectHideFlags: 0

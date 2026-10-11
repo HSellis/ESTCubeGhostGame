@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public string winCutsceneScene = "WinCutscene";
     public int waitTimeBeforeWinCutsceneMs = 10000;
     public string loseCutsceneScene = "LoseCutscene";
-    public int cutsceneWaitTimeMilliseconds = 4000;
+    public int waitTimeBeforeLoseCutsceneMs = 4000;
 
     // 0 - zoomed out
     // 1 - zooming
@@ -132,7 +132,7 @@ public class GameController : MonoBehaviour
         // Show cutscene
         if (isWin)
         {
-            await Task.Delay(cutsceneWaitTimeMilliseconds);
+            await Task.Delay(waitTimeBeforeLoseCutsceneMs);
             SceneManager.LoadScene(loseCutsceneScene);
         } else
         {

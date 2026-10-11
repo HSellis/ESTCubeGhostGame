@@ -82,14 +82,13 @@ public class ESTCube : MonoBehaviour
         }
     }
 
-    public async Task OnCollideWithAsteroid()
+    public async void OnCollideWithAsteroid()
     {
         generalAudioSource.Play();
         foreach (CubeFace cubeFace in cubeFaces)
         {
             cubeFace.OnHitAsteroid();
         }
-
         gameController.EndGame(false);
     }
 }
