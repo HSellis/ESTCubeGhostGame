@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 341076620}
   - component: {fileID: 341076624}
   - component: {fileID: 341076625}
+  - component: {fileID: 341076626}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
   videoPlayer: {fileID: 759437366}
-  sceneToLoad: TestScene1
+  sceneToLoad: Cube_asteroid_merge
 --- !u!82 &341076625
 AudioSource:
   m_ObjectHideFlags: 0
@@ -337,6 +338,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &341076626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341076619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e778085ff2b19146b666c39e1612019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomVideoPlayer
+  player: {fileID: 759437366}
+  FilePath: win_cutscene_v2.mp4
 --- !u!1 &759437361
 GameObject:
   m_ObjectHideFlags: 0
