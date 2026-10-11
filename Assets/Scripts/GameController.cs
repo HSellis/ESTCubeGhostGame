@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class GameController : MonoBehaviour
     public MeteoriteSpawner NONBGMeteoriteSpawner;
     public MeteoriteSpawner BGMeteoriteSpawner;
 
-    public TextMesh GameEndText;
     public float GameDuration = 300f;
+    public string winCutsceneScene = "WinCutscene";
     // 0 - zoomed out
     // 1 - zooming
     // 2 - zoomed in
@@ -40,7 +41,7 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameEndText.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -123,8 +124,8 @@ public class GameController : MonoBehaviour
         NONBGMeteoriteSpawner.gameObject.SetActive(false);
         BGMeteoriteSpawner.gameObject.SetActive(false);
 
-        // Display game over message
-        GameEndText.gameObject.SetActive(true);
+        // Show win cutscene
+        SceneManager.LoadScene(winCutsceneScene);
     }
     
 }
