@@ -1535,7 +1535,7 @@ MonoBehaviour:
   ButtonPanel: {fileID: 217903554}
   videoPlayer: {fileID: 759437366}
   audioSource: {fileID: 341076625}
-  introCutsceneClip: {fileID: 8300000, guid: 0a508f61ca3bdbd4bbed0bac3b0af49c, type: 3}
+  introCutsceneClip: {fileID: 8300000, guid: cb4787ce2718f674bb4584c9b319d53d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
