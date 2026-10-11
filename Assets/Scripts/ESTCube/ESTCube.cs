@@ -19,9 +19,7 @@ public class ESTCube : MonoBehaviour
     public GameObject cubetip;
     public AudioSource cableAudioSource;
     public AudioSource generalAudioSource;
-    public string winCutsceneScene = "WinCutscene";
-    public string loseCutsceneScene = "LoseCutscene";
-    public int cutsceneWaitTimeMilliseconds = 4000;
+    public GameController gameController;
 
     private Rigidbody rb;
     private LineRenderer lineRenderer;
@@ -92,7 +90,6 @@ public class ESTCube : MonoBehaviour
             cubeFace.OnHitAsteroid();
         }
 
-        await Task.Delay(cutsceneWaitTimeMilliseconds);
-        SceneManager.LoadScene(loseCutsceneScene);
+        gameController.EndGame(false);
     }
 }

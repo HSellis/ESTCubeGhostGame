@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public float GameDuration = 300f;
     public string winCutsceneScene = "WinCutscene";
     public int waitTimeBeforeWinCutsceneMs = 10000;
+    public string loseCutsceneScene = "LoseCutscene";
+    public int cutsceneWaitTimeMilliseconds = 4000;
 
     // 0 - zoomed out
     // 1 - zooming
@@ -53,7 +55,7 @@ public class GameController : MonoBehaviour
         if (GameDuration == 0)
         {
             GameDuration = -1;
-            EndGame();
+            EndGame(true);
             // Handle game over logic here
         }
         else if (GameDuration != -1)
@@ -121,15 +123,21 @@ public class GameController : MonoBehaviour
         });
     }
 
-    private async void EndGame()
+    public async void EndGame(bool isWin)
     {
         // Stop meteorite spawning
         NONBGMeteoriteSpawner.gameObject.SetActive(false);
         BGMeteoriteSpawner.gameObject.SetActive(false);
 
-        // Show win cutscene
-        await Task.Delay(waitTimeBeforeWinCutsceneMs);
-        SceneManager.LoadScene(winCutsceneScene);
+        // Show cutscene
+        if (isWin)
+        {
+            await Task.Delay(cutsceneWaitTimeMilliseconds);
+            SceneManager.LoadScene(loseCutsceneScene);
+        } else
+        {
+            await Task.Delay(waitTimeBeforeWinCutsceneMs);
+            SceneManager.LoadScene(winCutsceneScene);
+        }
     }
-    
 }
