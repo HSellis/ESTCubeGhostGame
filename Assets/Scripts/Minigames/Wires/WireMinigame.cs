@@ -11,9 +11,9 @@ public class WireMiniGame : MiniGame
         WireSpots = this.gameObject.GetComponentsInChildren<WireDragSpot>();
     }
 
-    private void Start()
+    protected override void Start()
     {
-        
+        base.Start();
     }
 
     public void SetCurrentWire(WireDrag wire)

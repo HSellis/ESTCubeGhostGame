@@ -15,7 +15,6 @@ public class SpriteClick : MonoBehaviour
         minigame = this.gameObject.GetComponentInParent<WireMiniGame>();
         if (targetCamera == null)
             targetCamera = FindAnyObjectByType<Camera>();
-            Debug.Log(targetCamera.name);
 
         if (targetCamera == null)
             Debug.Log("No camera found");

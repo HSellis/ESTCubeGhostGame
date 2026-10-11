@@ -27,8 +27,9 @@ public class TextGenerator : MiniGame
         }
     }
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         SetRandomCode();
     }
 

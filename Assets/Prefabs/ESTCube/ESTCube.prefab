@@ -491,6 +491,10 @@ PrefabInstance:
       propertyPath: estCube
       value: 
       objectReference: {fileID: 5994156417735233960}
+    - target: {fileID: 8959653651805064017, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
+      propertyPath: cubeFaceCover
+      value: 
+      objectReference: {fileID: 8934533861681233436}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -501,6 +505,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6139271386737265597, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
   m_PrefabInstance: {fileID: 1453630485695332376}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8934533861681233436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8057364197966216708, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
+  m_PrefabInstance: {fileID: 1453630485695332376}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60618b8006a69884b928d0cca28dcb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSide
 --- !u!1001 &1565023201177890794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -643,6 +658,10 @@ PrefabInstance:
       propertyPath: estCube
       value: 
       objectReference: {fileID: 5994156417735233960}
+    - target: {fileID: 8959653651805064017, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
+      propertyPath: cubeFaceCover
+      value: 
+      objectReference: {fileID: 8326146930584912152}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -653,6 +672,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6139271386737265597, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
   m_PrefabInstance: {fileID: 2044045482556194588}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8326146930584912152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8057364197966216708, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
+  m_PrefabInstance: {fileID: 2044045482556194588}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60618b8006a69884b928d0cca28dcb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSide
 --- !u!1001 &2461899675715345012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,6 +765,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2912961596762075585, guid: 86f2105065f41d644be01901bddf6073, type: 3}
+      propertyPath: cubeFaceCover
+      value: 
+      objectReference: {fileID: 5180052153698712173}
     - target: {fileID: 6139271386737265597, guid: 86f2105065f41d644be01901bddf6073, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.008
@@ -784,6 +818,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f2105065f41d644be01901bddf6073, type: 3}
+--- !u!114 &5180052153698712173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8057364197966216708, guid: 86f2105065f41d644be01901bddf6073, type: 3}
+  m_PrefabInstance: {fileID: 2896588553344287849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60618b8006a69884b928d0cca28dcb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSide
 --- !u!4 &9007671210657271764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6139271386737265597, guid: 86f2105065f41d644be01901bddf6073, type: 3}
@@ -849,11 +894,26 @@ PrefabInstance:
       propertyPath: estCube
       value: 
       objectReference: {fileID: 5994156417735233960}
+    - target: {fileID: 8959653651805064017, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
+      propertyPath: cubeFaceCover
+      value: 
+      objectReference: {fileID: 6340568906783724176}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
+--- !u!114 &6340568906783724176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8057364197966216708, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
+  m_PrefabInstance: {fileID: 4048661160491412628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60618b8006a69884b928d0cca28dcb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSide
 --- !u!4 &7862344950249367337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6139271386737265597, guid: 74840488ec1922a4b8cac0bf57853b6e, type: 3}
@@ -871,6 +931,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2912961596762075585, guid: 86f2105065f41d644be01901bddf6073, type: 3}
+      propertyPath: cubeFaceCover
+      value: 
+      objectReference: {fileID: 2982026061711313999}
     - target: {fileID: 6139271386737265597, guid: 86f2105065f41d644be01901bddf6073, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.008
@@ -925,6 +989,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6139271386737265597, guid: 86f2105065f41d644be01901bddf6073, type: 3}
   m_PrefabInstance: {fileID: 5094638714336539211}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2982026061711313999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8057364197966216708, guid: 86f2105065f41d644be01901bddf6073, type: 3}
+  m_PrefabInstance: {fileID: 5094638714336539211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60618b8006a69884b928d0cca28dcb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSide
 --- !u!1001 &5846565122793985206
 PrefabInstance:
   m_ObjectHideFlags: 0

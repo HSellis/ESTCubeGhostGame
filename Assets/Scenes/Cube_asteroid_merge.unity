@@ -303,6 +303,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 991754399}
   m_SourcePrefab: {fileID: 100100000, guid: 6cdb90d1e675fb3409a5587b923f0657, type: 3}
+--- !u!114 &159475272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5619347443881632880, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
+  m_PrefabInstance: {fileID: 2005445848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60618b8006a69884b928d0cca28dcb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSide
 --- !u!1 &593693908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,6 +1142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ESTCube
       objectReference: {fileID: 0}
+    - target: {fileID: 6808731461705191717, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
+      propertyPath: cubeFaceCover
+      value: 
+      objectReference: {fileID: 159475272}
     - target: {fileID: 6808731461705191717, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
       propertyPath: gameController
       value: 
