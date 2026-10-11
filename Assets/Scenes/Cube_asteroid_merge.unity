@@ -531,6 +531,8 @@ MonoBehaviour:
   GameDuration: 90
   winCutsceneScene: WinCutscene
   waitTimeBeforeWinCutsceneMs: 10000
+  loseCutsceneScene: LoseCutscene
+  waitTimeBeforeLoseCutsceneMs: 4000
 --- !u!1001 &687797450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1118,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5994156417735233960, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 593693914}
     - target: {fileID: 6781484610565463088, guid: a223743cca0f6714ab5bc0166a56d766, type: 3}
       propertyPath: m_Name
       value: ESTCube

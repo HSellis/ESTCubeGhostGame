@@ -57,10 +57,10 @@ public abstract class MiniGame : MonoBehaviour
     {
         if (isMiniGameActive | !isHit)
         {
-            Debug.Log("isMiniGameActive: " + isMiniGameActive + ", isHit: " + isHit);
+            //Debug.Log("isMiniGameActive: " + isMiniGameActive + ", isHit: " + isHit);
             return;
         }
-        Debug.Log("Something was hit, playing electricity effect.");
+        //Debug.Log("Something was hit, playing electricity effect.");
         electricityEffectCD -= Time.deltaTime;
         if (electricityEffectCD <= 0)
         {
