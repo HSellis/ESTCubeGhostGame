@@ -528,7 +528,7 @@ MonoBehaviour:
   estCube: {fileID: 1301985140}
   NONBGMeteoriteSpawner: {fileID: 1249922867}
   BGMeteoriteSpawner: {fileID: 1005140839}
-  GameDuration: 90
+  GameDuration: 120
   winCutsceneScene: WinCutscene
   waitTimeBeforeWinCutsceneMs: 10000
   loseCutsceneScene: LoseCutscene
