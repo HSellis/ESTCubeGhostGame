@@ -60,7 +60,8 @@ public class TextGenerator : MiniGame
         {
             if (TypedText.text == GeneratedText.text)
             {
-                Victory();
+                RepairComplete();
+                
             }
             else
             {
@@ -69,12 +70,8 @@ public class TextGenerator : MiniGame
         }
     }
 
-    void Victory()
-    {
-    }
-
     protected override void ResetMinigame()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

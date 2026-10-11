@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WireMiniGame : MiniGame
 {
-    private GameController gameController;
+    
     private WireDrag CurrentWire;
 
     private WireDragSpot[] WireSpots;
@@ -13,7 +13,7 @@ public class WireMiniGame : MiniGame
 
     private void Start()
     {
-        gameController = GameObject.Find("Main Camera").GetComponent<GameController>();
+        
     }
 
     public void SetCurrentWire(WireDrag wire)
@@ -31,7 +31,6 @@ public class WireMiniGame : MiniGame
         foreach (WireDragSpot wire in WireSpots) {
             if (wire.canDraw) return;
         }
-        gameController.ZoomOutFromMiniGame();
         RepairComplete();
     }
 
