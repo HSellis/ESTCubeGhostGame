@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ESTCube : MonoBehaviour
@@ -17,6 +19,9 @@ public class ESTCube : MonoBehaviour
     public GameObject cubetip;
     public AudioSource cableAudioSource;
     public AudioSource generalAudioSource;
+    public string winCutsceneScene = "WinCutscene";
+    public string loseCutsceneScene = "LoseCutscene";
+    public int cutsceneWaitTimeMilliseconds = 4000;
 
     private Rigidbody rb;
     private LineRenderer lineRenderer;
@@ -79,12 +84,15 @@ public class ESTCube : MonoBehaviour
         }
     }
 
-    public void OnCollideWithAsteroid()
+    public async Task OnCollideWithAsteroid()
     {
         generalAudioSource.Play();
         foreach (CubeFace cubeFace in cubeFaces)
         {
             cubeFace.Detach();
         }
+
+        await Task.Delay(cutsceneWaitTimeMilliseconds);
+        SceneManager.LoadScene(loseCutsceneScene);
     }
 }

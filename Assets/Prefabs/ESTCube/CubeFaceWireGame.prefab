@@ -357,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 895707524162380561, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
       propertyPath: cubeFaceCover
       value: 
-      objectReference: {fileID: 2415599481864482629}
+      objectReference: {fileID: 8057364197966216708}
     - target: {fileID: 895707524162380561, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
       propertyPath: cameraFocusTransform
       value: 
@@ -445,6 +445,14 @@ PrefabInstance:
     - target: {fileID: 5180545293907241728, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881290510092895130, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881290510092895130, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6123630506553912239, guid: 4ab7ab60036e626439fb35bc92fbf00e, type: 3}
       propertyPath: m_Layer

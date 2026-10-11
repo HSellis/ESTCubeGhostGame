@@ -345,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 557703502004801313, guid: 7332e8721379e6a4896393e8b850ce60, type: 3}
       propertyPath: cubeFaceCover
       value: 
-      objectReference: {fileID: 2415599481864482629}
+      objectReference: {fileID: 8057364197966216708}
     - target: {fileID: 557703502004801313, guid: 7332e8721379e6a4896393e8b850ce60, type: 3}
       propertyPath: cameraFocusTransform
       value: 
@@ -413,6 +413,14 @@ PrefabInstance:
     - target: {fileID: 7928592552099554787, guid: 7332e8721379e6a4896393e8b850ce60, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198861859744263887, guid: 7332e8721379e6a4896393e8b850ce60, type: 3}
+      propertyPath: m_Size.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198861859744263887, guid: 7332e8721379e6a4896393e8b850ce60, type: 3}
+      propertyPath: m_Size.y
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
