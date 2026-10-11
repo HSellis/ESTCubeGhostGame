@@ -689,6 +689,9 @@ MonoBehaviour:
   cameraFocusTransform: {fileID: 0}
   cubeFaceCover: {fileID: 0}
   estCube: {fileID: 0}
+  electricityEffect: {fileID: 7023715993190025731, guid: 1dab3fecb8d9618458188dd7ef876d00, type: 3}
+  electricityEffectCD: 4
+  isMiniGameActive: 0
   GeneratedText: {fileID: 9168053229320757241}
   TypedText: {fileID: 1964487660662428160}
 --- !u!212 &5125606714532227484

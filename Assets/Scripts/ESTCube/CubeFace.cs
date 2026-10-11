@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -6,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CubeFace : MonoBehaviour
 {
+    public event Action Detached;
+
     private Rigidbody rb;
     private Transform originalParent;
     private Vector3 originalLocalPosition;
@@ -32,10 +35,11 @@ public class CubeFace : MonoBehaviour
         
     }
 
-    public async void Detach()
+    public void Detach()
     {
         rb.isKinematic = false;
         transform.parent = null;
+        Detached?.Invoke();
     }
 
     public void Attach()
