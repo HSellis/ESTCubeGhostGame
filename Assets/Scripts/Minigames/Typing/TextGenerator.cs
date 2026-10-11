@@ -73,6 +73,6 @@ public class TextGenerator : MiniGame
 
     protected override void ResetMinigame()
     {
-
+        SetRandomCode();
     }
 }
